@@ -16,7 +16,6 @@ router = APIRouter(
 
 
 
-
 @router.get(
     "/user",
     status_code=200,

@@ -221,7 +221,7 @@ async def get_user_request_details(
             mechanic_name = mechanic.name
 
         request_details = {
-            "request id" : request.request_id,
+            "id": request.request_id,
             "mechanic id": mechanic_id,
             "mechanic name": mechanic_name,
             "status": request.status,
@@ -931,7 +931,6 @@ async def mechanic_accept_request(
         return {"message": "the request accepted succefully"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
 
 
 

@@ -1,4 +1,4 @@
-from fastapi import HTTPException, Depends , APIRouter
+from fastapi import HTTPException, Depends , APIRouter 
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from dependencies.helper import swagger_responses
@@ -90,6 +90,7 @@ async def get_current_account_details(session : AsyncSession = Depends(get_async
         return {"user" : user}
     except Exception as e:
         raise HTTPException(status_code=500 , detail = str(e))
+
 
 
 
