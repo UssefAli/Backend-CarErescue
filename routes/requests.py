@@ -562,7 +562,8 @@ async def get_all_available_mechanic_for_user(
                 rating_weight=weights.rating_weight,
                 distance_weight=weights.distance_weight,
             )
-
+            if score["total_score"] == 0.0:
+                continue
             mechanics_list.append(
                 {
                     "mechanic id": mechanic.id,
