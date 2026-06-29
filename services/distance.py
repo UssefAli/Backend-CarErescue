@@ -53,7 +53,13 @@ def calculate_score(
     distance_km = haversine_distance(
         user_lat, user_lng, mechanic_lat, mechanic_lng
     )
-
+    if distance_km > max_distance_km:
+        return {
+            "distance_km": distance_km,
+            "distance_score": 0.0,
+            "rating_score": 0.0,
+            "total_score": 0.0,
+        }
     distance_score = normalize_distance(distance_km, max_distance_km)
     rating_score = normalize_rating(mechanic_rating)
 
